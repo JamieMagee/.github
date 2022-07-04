@@ -5,7 +5,9 @@
     ":maintainLockFilesWeekly",
     ":rebaseStalePrs",
     ":semanticCommits",
-    ":semanticCommitScope(deps)"
+    ":semanticCommitScope(deps)",
+    "helpers:pinGitHubActionDigests",
+    "docker:pinDigests"
   ],
   "automergeType": "branch",
   "dependencyDashboard": true,
@@ -13,7 +15,7 @@
   "rebaseWhen": "behind-base-branch",
   "packageRules": [
     {
-      "description": "Require dashboard approval for major updates except Renovate",
+      "description": "Require dashboard approval for major updates",
       "matchUpdateTypes": ["major"],
       "dependencyDashboardApproval": true
     },
