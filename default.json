@@ -24,8 +24,5 @@
       "matchUpdateTypes": ["minor", "patch", "digest", "lockFileMaintenance"],
       "automerge": true
     }
-  ],
-  "nix": {
-    "enabled": true
-  }
+  ]
 }
