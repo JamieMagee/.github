@@ -7,28 +7,20 @@
     ":maintainLockFilesWeekly",
     ":rebaseStalePrs",
     ":semanticCommitScope(deps)",
-    ":disableRateLimiting"
+    ":disableRateLimiting",
+    ":separateMultipleMajorReleases",
+    ":automergeStableNonMajor",
+    ":enableVulnerabilityAlertsWithLabel(\"security\")"
   ],
   "automergeType": "branch",
   "dependencyDashboard": true,
   "prCreation": "not-pending",
   "rebaseWhen": "behind-base-branch",
+  "osvVulnerabilityAlerts": true,
   "packageRules": [
     {
-      "description": "Open major updates in parallel to other updates",
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "separateMultipleMajor": true
-    },
-    {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "digest",
-        "lockFileMaintenance"
-      ],
+      "description": "Automerge lock file maintenance and digest updates",
+      "matchUpdateTypes": ["digest", "lockFileMaintenance"],
       "automerge": true
     }
   ]
