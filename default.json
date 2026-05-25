@@ -15,9 +15,9 @@
   "rebaseWhen": "behind-base-branch",
   "packageRules": [
     {
-      "description": "Require dashboard approval for major updates",
+      "description": "Open major updates in parallel to other updates",
       "matchUpdateTypes": ["major"],
-      "dependencyDashboardApproval": true
+      "separateMultipleMajor": true
     },
     {
       "description": "Automerge non-major updates",
