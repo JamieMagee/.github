@@ -2,9 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
+    "group:recommended",
+    "group:allNonMajor",
     ":maintainLockFilesWeekly",
     ":rebaseStalePrs",
-    ":semanticCommitScope(deps)"
+    ":semanticCommitScope(deps)",
+    ":disableRateLimiting"
   ],
   "automergeType": "branch",
   "dependencyDashboard": true,
@@ -13,12 +16,19 @@
   "packageRules": [
     {
       "description": "Open major updates in parallel to other updates",
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "separateMultipleMajor": true
     },
     {
       "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch", "digest", "lockFileMaintenance"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest",
+        "lockFileMaintenance"
+      ],
       "automerge": true
     }
   ]
